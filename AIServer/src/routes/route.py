@@ -40,4 +40,4 @@ def face_recognization():
         return jsonify({"validated": validated}), 200
     except Exception as e: 
         print("Error:", str(e))
-        return jsonify({"msg": "Create failed!"}), 400
+        return jsonify({"msg": "Recognize failed!"}), 400

@@ -25,7 +25,7 @@ def read_image(image):
     image_stream = image.read()
     img_array = np.frombuffer(image_stream, dtype=np.uint8)
     img = cv2.imdecode(img_array, cv2.IMREAD_UNCHANGED)
-    # img = cv2.resize(img, (1024, 1024))
+    img = cv2.resize(img, (1024, 1024))
     return img
 
 def detect_face(image):
@@ -122,7 +122,7 @@ def face_recognize(student_id, image, threshold):
         student_vector[distance] = staff_id
 
     # print("Sinh viên đăng nhập hệ thống", student_id)
-    # print("Sinh viên nhận diện được", student_vector[min_distance])
+    print("Sinh viên nhận diện được", student_vector[min_distance])
     print("Khoảng cách chi tiết", student_vector)
     
     #Tính toán độ tương đồng cosine giữa hai vectơ đặc trưng
